@@ -150,7 +150,7 @@ function App() {
   const gradientId = 'fat-gradient'
 
   return (
-    <div className="min-h-screen w-full max-w-md mx-auto px-4 py-6 space-y-6">
+    <div className="min-h-screen w-full max-w-md mx-auto px-4 py-6 space-y-6 bg-white dark:bg-neutral-900">
       {/* Header */}
       <header className="flex items-center justify-between">
         <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center">

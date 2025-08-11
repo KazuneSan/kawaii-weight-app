@@ -17,14 +17,12 @@
   --radius: 1rem;           /* rounded-2xl 相当 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-grad-1: #0b0b0f;
-    --bg-grad-2: #1a1a1f;
-    --bg-grad-3: #0f0f1a;
-    --glass: rgba(255,255,255,0.06);
-    --shadow: 0 8px 30px rgba(0,0,0,0.3);
-  }
+.dark {
+  --bg-grad-1: #0b0b0f;
+  --bg-grad-2: #1a1a1f;
+  --bg-grad-3: #0f0f1a;
+  --glass: rgba(255,255,255,0.06);
+  --shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
 html, body {
@@ -33,7 +31,6 @@ html, body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
   background: linear-gradient(to bottom, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3));
   min-height: 100vh;
@@ -42,6 +39,10 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  color: rgba(255, 255, 255, 0.87);
 }
 
 #root {
@@ -136,11 +137,9 @@ html, body {
   opacity: 1;
 }
 
-@media (prefers-color-scheme: dark) {
-  .toast {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-  }
+.dark .toast {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* 入力フィールド */
@@ -156,13 +155,11 @@ html, body {
   background-color: #f5f3ff; /* violet-50 */
 }
 
-@media (prefers-color-scheme: dark) {
-  .input-pink,
-  .input-rose,
-  .input-violet {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
-  }
+.dark .input-pink,
+.dark .input-rose,
+.dark .input-violet {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
 }
 
 /* アニメーション */
@@ -232,7 +229,7 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
