@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Settings, Heart, Sparkles, X } from 'lucide-react'
 import { Button } from './components/ui/button'
 import { Card, CardContent, CardTitle } from './components/ui/card'
@@ -124,50 +124,6 @@ function App() {
     setMotivationText(randomMessage)
   }
 
-  const handleExport = () => {
-    const data = {
-      mockData: MOCK,
-      todayData: {
-        intake: todayIntake,
-        walk: todayWalk,
-        yoga: todayYoga,
-        ringfit: todayRingfit,
-        other: todayOther
-      }
-    }
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = 'weight-loss-data.json'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-    URL.revokeObjectURL(url)
-  }
-
-  const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        try {
-          const data = JSON.parse(e.target?.result as string)
-          if (data.todayData) {
-            setTodayIntake(data.todayData.intake || 0)
-            setTodayWalk(data.todayData.walk || 0)
-            setTodayYoga(data.todayData.yoga || 0)
-            setTodayRingfit(data.todayData.ringfit || 0)
-            setTodayOther(data.todayData.other || 0)
-          }
-        } catch (error) {
-          console.error('Failed to parse JSON:', error)
-        }
-      }
-      reader.readAsText(file)
-    }
-    event.target.value = ''
-  }
 
   const gradientId = 'fat-gradient'
 

@@ -8,7 +8,8 @@
       "Bash(kill:*)",
       "WebFetch(domain:localhost)",
       "Bash(open http://localhost:8000)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }
