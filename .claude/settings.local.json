@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(rm:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(open http://localhost:8000)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "messages": [
+    {
+      "message": "今日も素敵な一歩を踏み出しましょう！ 🌸",
+      "condition": "default",
+      "category": "daily"
+    },
+    {
+      "message": "あなたの努力がきっと実を結びます ✨",
+      "condition": "encouragement",
+      "category": "motivation"
+    },
+    {
+      "message": "小さな変化も大きな進歩です 🌟",
+      "condition": "small_progress",
+      "category": "progress"
+    },
+    {
+      "message": "継続は力なり！今日も記録をつけて 📝",
+      "condition": "consistency",
+      "category": "habit"
+    },
+    {
+      "message": "健康的な生活を送っている自分を褒めてあげて 💖",
+      "condition": "self_care",
+      "category": "wellness"
+    },
+    {
+      "message": "目標に向かって着実に進んでいますね 🎯",
+      "condition": "progress",
+      "category": "achievement"
+    },
+    {
+      "message": "今日の記録も大切な一歩です 👣",
+      "condition": "daily_record",
+      "category": "daily"
+    },
+    {
+      "message": "あなたの頑張りを応援しています！ 🎀",
+      "condition": "support",
+      "category": "encouragement"
+    },
+    {
+      "message": "理想の自分に近づいていますよ 🦄",
+      "condition": "transformation",
+      "category": "motivation"
+    },
+    {
+      "message": "毎日の記録が未来を作ります 🌈",
+      "condition": "future",
+      "category": "inspiration"
+    },
+    {
+      "message": "すばらしい！体重が減少していますね 🎉",
+      "condition": "weight_loss",
+      "category": "celebration"
+    },
+    {
+      "message": "維持できているのも素晴らしいことです 👑",
+      "condition": "maintenance",
+      "category": "stability"
+    },
+    {
+      "message": "今週も頑張りましたね！お疲れさまです 🌺",
+      "condition": "weekly",
+      "category": "weekly_review"
+    },
+    {
+      "message": "目標まであと少し！頑張って 💪",
+      "condition": "near_goal",
+      "category": "almost_there"
+    },
+    {
+      "message": "おめでとうございます！目標達成です 🏆",
+      "condition": "goal_achieved",
+      "category": "victory"
+    },
+    {
+      "message": "新しい目標を設定してみませんか？ 🚀",
+      "condition": "new_goal",
+      "category": "growth"
+    },
+    {
+      "message": "健康第一！無理をしないでくださいね 🍃",
+      "condition": "health_reminder",
+      "category": "health"
+    },
+    {
+      "message": "バランスの取れた食事と運動を心がけて 🥗",
+      "condition": "lifestyle",
+      "category": "health"
+    },
+    {
+      "message": "水分補給も忘れずに！ 💧",
+      "condition": "hydration",
+      "category": "health"
+    },
+    {
+      "message": "十分な睡眠も大切ですよ 😴",
+      "condition": "sleep",
+      "category": "health"
+    },
+    {
+      "message": "ストレスを溜めずにリラックスして 🧘‍♀️",
+      "condition": "stress_relief",
+      "category": "wellness"
+    },
+    {
+      "message": "今日も元気に過ごしましょう！ 🌞",
+      "condition": "morning",
+      "category": "daily"
+    },
+    {
+      "message": "一日の終わりに記録をつける習慣、素敵です 🌙",
+      "condition": "evening",
+      "category": "daily"
+    },
+    {
+      "message": "体重の変動は自然なこと。気長に続けましょう 🌊",
+      "condition": "fluctuation",
+      "category": "reality_check"
+    },
+    {
+      "message": "あなたのペースで大丈夫です 🐢",
+      "condition": "personal_pace",
+      "category": "self_acceptance"
+    },
+    {
+      "message": "記録を続けているあなたは素晴らしい！ ⭐",
+      "condition": "consistency_praise",
+      "category": "praise"
+    },
+    {
+      "message": "小さな習慣が大きな変化を生みます 🌱",
+      "condition": "habit_building",
+      "category": "growth"
+    },
+    {
+      "message": "今日の自分を昨日の自分と比べて成長を感じて 📈",
+      "condition": "self_comparison",
+      "category": "progress"
+    },
+    {
+      "message": "美しい心と体を手に入れましょう 💎",
+      "condition": "holistic_beauty",
+      "category": "inspiration"
+    },
+    {
+      "message": "毎日があなたの新しいスタートです 🌅",
+      "condition": "fresh_start",
+      "category": "renewal"
+    },
+    {
+      "message": "自分を大切にすることから始めましょう 💝",
+      "condition": "self_love",
+      "category": "self_care"
+    },
+    {
+      "message": "挫折は成功への道のりの一部です 🌸",
+      "condition": "setback_recovery",
+      "category": "resilience"
+    },
+    {
+      "message": "今月もお疲れさま！来月も一緒に頑張りましょう 📅",
+      "condition": "monthly",
+      "category": "monthly_review"
+    },
+    {
+      "message": "データが蓄積されて、パターンが見えてきましたね 📊",
+      "condition": "data_insights",
+      "category": "analytics"
+    },
+    {
+      "message": "あなたの努力の記録は宝物です 💎",
+      "condition": "record_value",
+      "category": "appreciation"
+    },
+    {
+      "message": "楽しみながら続けることが大切ですね 🎈",
+      "condition": "enjoyment",
+      "category": "fun"
+    },
+    {
+      "message": "体重計に乗る勇気も成長の証です 💪",
+      "condition": "courage",
+      "category": "bravery"
+    },
+    {
+      "message": "健康的なライフスタイルを楽しんでいますね 🌿",
+      "condition": "healthy_lifestyle",
+      "category": "lifestyle"
+    },
+    {
+      "message": "変化を恐れず、新しい自分を発見しましょう 🔍",
+      "condition": "self_discovery",
+      "category": "transformation"
+    },
+    {
+      "message": "今日という日は二度と来ません。大切に過ごして 🌟",
+      "condition": "mindfulness",
+      "category": "presence"
+    }
+  ]
+}
