@@ -42,7 +42,27 @@ function App() {
   const cumDefKcal = chartData.length > 0 ? (chartData[chartData.length - 1].cumDef ?? 0) : 0
   const roundedCumDefKcal = Math.round(cumDefKcal)
   const cumFat = cumDefKcal / 7200
+  const cumFatG = Math.round(cumFat * 1000)
   const progress = clamp(Math.round((cumFat / 3.0) * 100), 0, 100)
+  
+  // エリアチャート動的スケール計算
+  function chooseStepG(maxG: number) {
+    if (maxG <= 500) return 50;       // 〜0.5kg
+    if (maxG <= 2000) return 100;     // 0.5〜2.0kg
+    return 250;                       // 2kg超
+  }
+  function makeTicksKg(maxFatKg: number) {
+    const maxG = Math.ceil((maxFatKg || 0) * 1000);
+    const step = chooseStepG(maxG);
+    const yMaxG = Math.max(step, Math.ceil(maxG / step) * step);
+    const ticks: number[] = [];
+    for (let g = 0; g <= yMaxG; g += step) ticks.push(g / 1000);
+    return { yMaxKg: yMaxG / 1000, ticks };
+  }
+  
+  // chartData の fat は kg を想定
+  const maxFatKg = Math.max(0, ...(chartData?.map(d => d.fat) ?? [0]));
+  const { yMaxKg, ticks } = makeTicksKg(maxFatKg);
   
   const selectedLog = logs[selectedDate]
   const todayDeficit = selectedLog ? {
@@ -163,7 +183,7 @@ function App() {
             />
           </div>
           <div className="text-xs text-gray-600">
-            累計推定脂肪減少 {cumFat.toFixed(2)} kg / {(settings.startWeightKg - settings.targetWeightKg).toFixed(2)} kg
+            累計推定脂肪減少 {cumFatG.toLocaleString()} g / {Math.round((settings.startWeightKg - settings.targetWeightKg) * 1000).toLocaleString()} g
           </div>
         </CardContent>
       </Card>
@@ -284,7 +304,7 @@ function App() {
           <Card>
             <CardContent className="text-center space-y-1 py-4">
               <div className="text-sm text-gray-600">累計推定脂肪減少</div>
-              <div className="text-2xl font-extrabold">{cumFat.toFixed(2)} kg</div>
+              <div className="text-2xl font-extrabold">{cumFatG.toLocaleString()} g</div>
             </CardContent>
           </Card>
         </div>
@@ -336,7 +356,13 @@ function App() {
                   </linearGradient>
                 </defs>
                 <XAxis dataKey="date" tick={{ fontSize: 12 }} />
-                <YAxis allowDecimals={false} tick={{ fontSize: 12 }} tickFormatter={(v: number) => `${Math.round(v * 1000)} g`} />
+                <YAxis
+                  domain={[0, yMaxKg]}
+                  ticks={ticks}
+                  allowDecimals={false}
+                  tick={{ fontSize: 12 }}
+                  tickFormatter={(v: number) => `${Math.round(v * 1000)} g`}
+                />
                 <Tooltip
                   formatter={(value: any) => [`${Math.round(Number(value) * 1000)} g`, "脂肪減少"]}
                   labelFormatter={(label: any) => `日付: ${label}`}
