@@ -4,10 +4,8 @@
 
 /* ライト固定（iOS Safari/LINE対応） */
 :root { color-scheme: light; }
-html, body { background: #fff; color: #111; }
-/* iOSの自動ダーク化でフォームが黒化しないよう背景を明示 */
-input, select, textarea { background-color: #fff; color: #111; }
-/* iOS LINE/Safariで意図しない色反転を避ける */
+html, body { background: #fff !important; color: #111 !important; }
+input, select, textarea { background-color: #fff !important; color: #111 !important; }
 @media (prefers-color-scheme: dark) {
   html, body, input, select, textarea { background: #fff !important; color: #111 !important; }
 }
