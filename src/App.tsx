@@ -6,6 +6,7 @@ import { BarChart, Bar, LineChart, Line, AreaChart, Area, XAxis, YAxis, Responsi
 import { motion } from 'framer-motion'
 import motivationMessages from './motivation.json'
 import { type Settings as SettingsType, type Logs, type DailyLog, loadSettings, saveSettings, loadLogs, saveLogs, deriveChartData, formatDateToYMD, clamp } from './lib/utils'
+import { useTheme } from './hooks/useTheme'
 
 const MOCK = [
   { date: "8/21", intake: 1400, tdee: 1850, deficit: -450, cumDef: 450, fat: 0.06 },
@@ -30,6 +31,7 @@ function App() {
   const [settings, setSettings] = useState<SettingsType>(() => loadSettings())
   const [logs, setLogs] = useState<Logs>(() => loadLogs())
   const [tempSettings, setTempSettings] = useState<SettingsType>(settings)
+  const { theme, setTheme } = useTheme()
 
   const chartData = useMemo(() => {
     const hasData = Object.keys(logs).length > 0;
@@ -486,6 +488,27 @@ function App() {
                         className="w-full px-3 py-2 rounded-lg border input-violet focus:outline-none focus:ring-2 focus:ring-violet-400"
                       />
                     </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <div className="text-sm font-medium">テーマ</div>
+                  <div className="flex gap-3">
+                    {(["system","light","dark"] as const).map(opt => (
+                      <label key={opt} className="flex items-center gap-1 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="theme"
+                          value={opt}
+                          checked={theme === opt}
+                          onChange={() => setTheme(opt)}
+                          className="accent-pink-400"
+                        />
+                        <span className="text-sm">
+                          {opt === "system" ? "システム" : opt === "light" ? "ライト" : "ダーク"}
+                        </span>
+                      </label>
+                    ))}
                   </div>
                 </div>
                 

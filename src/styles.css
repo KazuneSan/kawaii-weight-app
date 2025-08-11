@@ -2,13 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ライト固定（iOS Safari/LINE対応） */
-:root { color-scheme: light; }
-html, body { background: #fff !important; color: #111 !important; }
-input, select, textarea { background-color: #fff !important; color: #111 !important; }
-@media (prefers-color-scheme: dark) {
-  html, body, input, select, textarea { background: #fff !important; color: #111 !important; }
-}
+/* テーマ切替対応 */
+:root { color-scheme: light dark; }
 
 :root {
   --bg-grad-1: #fff1f2;   /* pink-50 */
